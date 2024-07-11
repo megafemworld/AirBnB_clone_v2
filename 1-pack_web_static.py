@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" Fabric script that generates a .tgz archive from the contents of the web_static"""
+""" Fabric script that generates a .tgz archive """
 from fabric.api import local, runs_once
 import os
 from datetime import datetime
+
 
 @runs_once
 def do_pack():
