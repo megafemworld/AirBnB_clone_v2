@@ -34,7 +34,7 @@ def c(text):
     return f'C {text}'
 
 
-@app.route('/python')
+@app.route('/python/')
 @app.route('/python/<text>')
 def py(text="is cool"):
     """display “Python ”, followed by the value
