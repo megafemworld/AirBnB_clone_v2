@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Flask app starting """
+"""Flask app starting
+flask script to start a web app
+"""
 from flask import Flask
 
 
@@ -7,8 +9,12 @@ app = Flask(__name__)
 
 @app.route('/', strict_slahes=False)
 def hello():
-    """Say something on start"""
+    """Say something on start
+    listening: 0.0.0.0
+    port: 5000
+    """
+
     return "Hello HBNB"
 
-if name = '__main__':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
