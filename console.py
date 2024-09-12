@@ -143,10 +143,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         new_dict = self._key_value_parser(args[1:])
-        new_instance = args[0](**new_dict)
+        new_instance = eval(args[0](**new_dict))
+        storage.new()
         storage.save()
         print(new_instance.id)
-        storage.save()
 
     def help_create(self):
         """ Help information for the create method """
