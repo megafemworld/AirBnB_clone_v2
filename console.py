@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return False
         if args[0] in HBNBCommand.classes:
-            new_dict = self._key_value_parser(args[1:])
+            new_dict = self._key_value_converter(args[1:])
             instance = HBNBCommand.classes[args[0]](**new_dict)
         else:
             print("** class doesn't exist **")
