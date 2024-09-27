@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Console Module """
 import cmd
+import shlex
 import sys
 from models.base_model import BaseModel
 from models.__init__ import storage
@@ -29,8 +30,8 @@ class HBNBCommand(cmd.Cmd):
              'max_guest': int, 'price_by_night': int,
              'latitude': float, 'longitude': float
             }
-
-    def _key_value_parser(self, args):
+    
+    def _key_value_converter(self, args):
         """creates a dictionary from a list of strings"""
         new_dict = {}
         for arg in args:
@@ -142,7 +143,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_dict = self._key_value_parser(args[1:])
+        new_dict = self._key_value_converter(args[1:])
         new_instance = args[0](**new_dict)
         storage.new()
         storage.save()
